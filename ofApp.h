@@ -126,10 +126,13 @@ class ofApp : public ofBaseApp{
 		ofxToggle b_showSpotSource;
 		ofxToggle b_showPointSource;
 		
+		ofxToggle b_Box;
+		
 
 		/********************
 		********************/
 		ofSpherePrimitive sphere;
+		ofBoxPrimitive box;
 		ofEasyCam cam;
 		
 		ofLight spot;

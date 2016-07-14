@@ -277,6 +277,8 @@ void ofApp::setup_gui()
 	gui[id_gui_panel].add(b_showPointSource.setup("showPointSource", true));
 	gui[id_gui_panel].add(b_showDirSource.setup("showDirSource", true));
 	
+	gui[id_gui_panel].add(b_Box.setup("is Box", false));
+	
 	/********************
 	save to file for reset.
 	********************/
@@ -397,11 +399,18 @@ void ofApp::draw(){
 	//we could enable GL_COLOR_MATERIAL set the color here
 	ofSetColor(materialColor_when_noLight);
 	
-	// ofSphere(0,0,0, radius);
-	sphere.setRadius(radius);
-	sphere.setPosition(0, 0, 0);
-	sphere.setResolution(Resolution);
-	sphere.draw();
+	if(!b_Box){
+		// ofSphere(0,0,0, radius);
+		sphere.setRadius(radius);
+		sphere.setPosition(0, 0, 0);
+		sphere.setResolution(Resolution);
+		sphere.draw();
+	}else{
+		box.set(radius);
+		box.setPosition(0, 0, 0);
+		box.setResolution(Resolution);
+		box.draw();
+	}
 	
 	
 
